@@ -1,0 +1,21 @@
+.container {
+    width: 100%;
+    .table {
+        margin-bottom: 3vh;
+        align-items: center;
+        text-align: center;
+        .icon {
+            align-items: center;
+            margin: 0.5vw;
+            cursor: pointer;
+        }
+    }
+
+    .pagination {
+        margin-bottom: 5vh;
+    }
+
+    .create {
+        margin-bottom: 5vh;
+    }
+}

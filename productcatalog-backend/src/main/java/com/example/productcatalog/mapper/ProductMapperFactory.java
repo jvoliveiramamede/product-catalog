@@ -4,6 +4,7 @@ import org.modelmapper.ModelMapper;
 
 import com.example.productcatalog.dto.ProductCreateRequest;
 import com.example.productcatalog.dto.ProductResponse;
+import com.example.productcatalog.dto.ProductUpdateRequest;
 import com.example.productcatalog.model.Product;
 
 public class ProductMapperFactory {
@@ -14,7 +15,15 @@ public class ProductMapperFactory {
         try {
             return modelMapper.map(request, Product.class);
         } catch (Exception e) {
-            throw new MapperException("Erro to convert ProductRequest class to Product entity");
+            throw new MapperException("Erro to convert ProductRequest class to Product entity", e);
+        }
+    }
+
+    public static Product convertUpdateToEntity(ProductUpdateRequest request) throws MapperException {
+        try {
+            return modelMapper.map(request, Product.class);
+        } catch (Exception e) {
+            throw new MapperException("Erro to convert ProductRequest class to Product entity", e);
         }
     }
 
@@ -22,7 +31,7 @@ public class ProductMapperFactory {
         try {
             return modelMapper.map(entity, ProductResponse.class);
         } catch (Exception e) {
-           throw new MapperException("Error to convert Product entity to ProductResponse class");
+           throw new MapperException("Error to convert Product entity to ProductResponse class", e);
         }
     }
 

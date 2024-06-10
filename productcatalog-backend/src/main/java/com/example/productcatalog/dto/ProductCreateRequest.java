@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 
 /**
- * Represents a DTO for creating or updating a product.
+ * Represents a DTO for creating a product.
  * <p>
  * This DTO is used to transfer data between the client and the server
  * for operations related to products, such as creation or update.

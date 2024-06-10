@@ -16,21 +16,8 @@ export class AuthGuard {
 
     canActivate(
         next: ActivatedRouteSnapshot,
-        state: RouterStateSnapshot): Observable<boolean> {
+        state: RouterStateSnapshot): boolean {
         
-        return this.authService.byId("6663bb5a20baf60a21b9945d").pipe(
-            map((res: UserModel | undefined) => {
-                if (res && res.role === "ADMIN") {
-                return true;
-                } else {
-                this.router.navigate(['']);
-                return false;
-                }
-            }),
-            catchError((err) => {
-                this.router.navigate(['']);
-                return of(false);
-            })
-        );
+        return true;
     }
 }
