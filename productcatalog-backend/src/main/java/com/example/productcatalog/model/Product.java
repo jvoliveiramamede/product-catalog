@@ -3,6 +3,7 @@ package com.example.productcatalog.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -50,4 +51,10 @@ public class Product {
      * The price of the product.
      */
     private Double price;
+    /**
+     * The catalog about this product.
+     * @see Catalog
+     */
+    @DocumentReference(lazy = true)
+    private Catalog catalog;
 }
