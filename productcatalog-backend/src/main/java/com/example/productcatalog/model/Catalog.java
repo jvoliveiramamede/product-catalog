@@ -21,8 +21,6 @@ public class Catalog {
     @Indexed(unique = true)
     private String name;
     @Indexed(unique = true)
-    private String title;
-    @Indexed(unique = true)
     private String category;
     @DocumentReference(lookup = "{'catalog':?#{#self._id} }")
     private List<Product> products;
